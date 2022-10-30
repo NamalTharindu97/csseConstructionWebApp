@@ -1,6 +1,7 @@
 import React from "react";
 import './navbar.css';
 import HeaderImg from '../asset/Header.png';
+import builder from '../asset/builder.png';
 
 const Header = () => {
     return(
@@ -25,6 +26,9 @@ const Header = () => {
             <div className="HeaderTxt">
                 <h1>Procurement Construction System</h1>
                 <h5>MD Holdings (Pvt) Ltd</h5>
+            </div>
+            <div className="builderImg">
+                <img src={builder} />
             </div>
             
         </>

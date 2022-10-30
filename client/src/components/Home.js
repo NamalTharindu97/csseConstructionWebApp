@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './style.css'
 
 export default class Home extends Component {
 
@@ -39,14 +40,14 @@ export default class Home extends Component {
   render() {
     return (
       <div className='container'>
-      <p>All Posts</p>
+        <h3 className='headtxt'>Requisition List</h3>
             <table className='table'>
             {/* table head */}
                     <thead>
                             <tr>
-                                <th scope='col'>#</th>
-                                <th scope='col'>Location</th>
+                                <th scope='col'>No</th>
                                 <th scope='col'>Name</th>
+                                <th scope='col'>Location</th>
                                 <th scope='col'>Contact</th>
                                 <th scope='col'>Action</th>
                             </tr>
@@ -59,10 +60,10 @@ export default class Home extends Component {
 
                                     <td>
                                     <a href={`/post/${posts._id}` }   style = {{textDecoration : 'none'}} >
-                                           {posts.location}
+                                           {posts.name}
                                     </a>
                                     </td>
-                                    <td>{posts.name}</td>
+                                    <td>{posts.location}</td>
                                     <td>{posts.contact}</td>
                                     <td>
 
