@@ -76,4 +76,12 @@ li{
         font-weight: bold;
     }
   }
+
+  .builderImg img{
+    width: 420px;
+    height: 280px;
+    position: absolute;
+    top: 22px;
+    right: 0;
+  }
   
