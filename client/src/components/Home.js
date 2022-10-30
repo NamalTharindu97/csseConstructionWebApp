@@ -28,7 +28,7 @@ export default class Home extends Component {
    onDelete = (id) => {
         axios.delete("/post/delete/"+ id)
             .then((res) => {
-                alert('employee detail deleted')
+                alert('Sites Details Successfully Deleted')
                 this.retrievePost();
                 window.location.reload(true)//reload page
     

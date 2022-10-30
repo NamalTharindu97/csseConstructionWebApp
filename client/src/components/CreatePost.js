@@ -27,7 +27,7 @@ const onSubmit = async e => {
         
   e.preventDefault();
   await axios.post('http://localhost:8000/post/save' , post).then(() => {
-      alert("attendance updated successfully");
+      alert("Sites Details Successfully Added");
   }).catch((err) => {
       alert(err);
   })
