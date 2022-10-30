@@ -1,6 +1,7 @@
 import React, { useState, useEffect  } from "react";
 import axios from 'axios';
 import {  useParams } from 'react-router-dom';
+import vector2 from '../asset/vector2.png'
 
 export default function EditPost() {
 
@@ -53,13 +54,12 @@ const onSubmit = async e => {
 
   return (
     <div >
-              <text>location  :     {location}</text> <br/>
-              <text>name  :     {name}</text><br/>
-              <text>contact  :     {contact}</text><br/>
+
 
               <div>
-    <form style={{width : '50%' , padding : 100}}>
+    <form className="Addform">
 
+    <h2>Update Requisition List</h2>
                   <div class="form-group">
                     <label for="formGroupExampleInput">Location</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
@@ -88,10 +88,13 @@ const onSubmit = async e => {
                   </div>
 
                   <div class="col-auto my-1">
-                  <button type="submit" class="btn btn-primary" onClick={onSubmit}>Submit</button>
+                  <button type="submit" className="button" onClick={onSubmit}>Update</button>
                   </div>
 
     </form>
+    <div className="vector01">
+      <img src={vector2} width="500px"></img>
+    </div>
     </div>
     </div>
   )

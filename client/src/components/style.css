@@ -52,6 +52,75 @@
 }
 
 
+/* single view */
+
+.container1{
+    background-color: #497b7f24;
+    padding: 30px;
+    width: 25%;
+    margin-left: 15%;
+    border-radius: 20px;
+}
+
+.container1 text{
+    font-size: 20px;
+    float: right;
+}
+.container1 label{
+    font-size: 20px;
+}
+.container2{
+    background-color: #497b7f24;
+    padding: 30px;
+    width: 25%;
+    margin-left: 15%;
+    border-radius: 20px;
+}
+.container2 text{
+    font-size: 20px;
+    float: right;
+}
+.container2 label{
+    font-size: 20px;
+}
+.single_view{
+    display: flex;
+    margin-top: 50px;
+}
+
+.btnClass{
+    
+}
+
+.button1{
+    background-color: #194e3c;
+    border:none;
+    padding: 10px;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 8%;
+    margin-bottom: 50px;
+}
+.container2 label span{
+    font-weight: bold;
+}
+.container2 text span{
+    font-weight: bold;
+}
+.container2 label span1{
+    font-weight: bold;
+    color: red;
+}
+.container2 text span1{
+    font-weight: bold;
+    color: red;
+}
+
+
 @media (max-width: 1500px) {
     .vector01{
         position: absolute;
