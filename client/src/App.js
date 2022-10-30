@@ -4,19 +4,21 @@ import Home from './components/Home';
 import EditPost from './components/EditPost';
 import CreatePost from './components/CreatePost';
 import PostDetails from './components/PostDetails';
-import Nav from './components/Nav';
+import Header from './Header/Header'
+import Footer from './footer/footer'
 
 export default class App extends Component {
   render() {
     return (
         <Router>
-          <Nav/>
+          <Header/>
                  <Routes>  
                     <Route path="/" element = {<Home/>}/>
                     <Route path="/edit/:id" element = {<EditPost/>}/>
                     <Route path="/add" element = {<CreatePost/>}/>
                     <Route path="/post/:id" element = {<PostDetails/>}/>
             </Routes>
+            <Footer/>
         </Router>
     )
   }
