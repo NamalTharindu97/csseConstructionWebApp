@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import './style.css'
+
+import vector01 from '../asset/vector01.png' 
 
 export default function CreatePost() {
 
@@ -33,10 +36,12 @@ const onSubmit = async e => {
 
   
   return (
+    <>
     <div>
-    <div>
-    <form style={{width : '50%' , padding : 100}}>
-
+    <div className="form">
+      
+    <form  className="Addform" >
+    <h2>Requisition List</h2>
                   <div class="form-group">
                     <label for="formGroupExampleInput">location</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
@@ -61,13 +66,18 @@ const onSubmit = async e => {
                     />
                   </div>
 
-                  <div class="col-auto my-1">
-                  <button type="submit" class="btn btn-primary" onClick={onSubmit}>Submit</button>
+                  <div>
+                  <button type="submit" className="button"  onClick={onSubmit}>Add</button>
                   </div>
 
     </form>
+    <div className="vector01">
+      <img src={vector01} width="500px"></img>
+    </div>
+
     </div>
 </div>
+</>
   )
 }
 
