@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import './style.css'
-
-import vector01 from '../asset/vector01.png' 
+import vector01 from '../../asset/vector01.png' 
 
 export default function CreatePost() {
 
@@ -41,7 +40,7 @@ const onSubmit = async e => {
     <div className="form">
       
     <form  className="Addform" >
-    <h2>Requisition List</h2>
+    <h2>Sites ADD</h2>
                   <div class="form-group">
                     <label for="formGroupExampleInput">location</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
