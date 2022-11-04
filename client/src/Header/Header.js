@@ -19,6 +19,8 @@ const Header = () => {
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="/">Sites</a>
                             <a class="dropdown-item" href="/ItemHome">Items</a>
+                            <a class="dropdown-item" href="/SupplierHome">Spplier</a>
+                            <a class="dropdown-item" href="/OrderHome">Order</a>
                             
                             </div>
                             </li>
@@ -30,6 +32,8 @@ const Header = () => {
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="/add">Sites ADD</a>
                             <a class="dropdown-item" href="/item/add">Items ADD</a>
+                            <a class="dropdown-item" href="/suplier/add">Supplier ADD</a>
+                            <a class="dropdown-item" href="/order/add">Order ADD</a>
                             
                             </div>
                             </li>
