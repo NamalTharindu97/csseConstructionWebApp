@@ -9,7 +9,10 @@ const PORT = 8000;
 //import router
 const postRoutes = require('./routes/posts');
 const itemRoutes = require('./routes/items');
-const orderRoutes = require('./routes/orders');
+
+const supplierRoutes = require('./routes/supliers');
+const orderRoutes = require('./routes/orders')
+
 const { post } = require("./routes/items");
 
 
@@ -21,6 +24,9 @@ app.use(cors());
 //rouete middleware
 app.use(postRoutes);
 app.use(itemRoutes);
+
+app.use(supplierRoutes);
+
 app.use(orderRoutes);
 
 const DB_URL = 'mongodb+srv://csse:csse@csse.d7j8odg.mongodb.net/?retryWrites=true&w=majority';

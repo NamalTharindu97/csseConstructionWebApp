@@ -3,7 +3,7 @@ import axios from 'axios';
 import './style.css'
 
 export default class Home extends Component {
-    //Render Props design patter usage
+
     constructor(props){
         super(props);
         this.state = {
@@ -12,12 +12,11 @@ export default class Home extends Component {
     }
 
     componentDidMount(){
-        this.getItem();
+        this.retrievePost();
     }
 
-    //use for get item data from the database
-    getItem(){
-        axios.get('/posts/').then(res => {
+    retrievePost(){
+        axios.get('/orders/').then(res => {
             if(res.data.success){
                 this.setState({
                     posts : res.data.existingPosts
@@ -26,11 +25,10 @@ export default class Home extends Component {
         })
     }
 
-    //use for delete data from the
    onDelete = (id) => {
-        axios.delete("/post/delete/"+ id)
+        axios.delete("/orders/delete/"+ id)
             .then((res) => {
-                alert('Sites Details Successfully Deleted')
+                alert('orders Details Successfully Deleted')
                 this.retrievePost();
                 window.location.reload(true)//reload page
     
@@ -42,16 +40,15 @@ export default class Home extends Component {
   render() {
     return (
       <div className='container'>
-        <h3 className='headtxt'>Sites List</h3>
+        <h3 className='headtxt'>Order List</h3>
             <table className='table'>
             {/* table head */}
                     <thead>
                             <tr>
                                 <th scope='col'>No</th>
-                                <th scope='col'>Name</th>
-                                <th scope='col'>Location</th>
-                                <th scope='col'>Contact</th>
-                                <th scope='col'>Action</th>
+                                <th scope='col'>Site</th>
+                                <th scope='col'>Item</th>
+                                <th scope='col'>Supplier</th>
                             </tr>
                     </thead>
                 {/* table body */}
@@ -61,15 +58,15 @@ export default class Home extends Component {
                                     <th scope='row'>{index+1}</th>
 
                                     <td>
-                                    <a href={`/post/${posts._id}` }   style = {{textDecoration : 'none'}} >
-                                           {posts.location}
+                                    <a href={`/order/${posts._id}` }   style = {{textDecoration : 'none'}} >
+                                           {posts.site}
                                     </a>
                                     </td>
-                                    <td>{posts.name}</td>
-                                    <td>{posts.contact}</td>
+                                    <td>{posts.item}</td>
+                                    <td>{posts.supplier}</td>
                                     <td>
 
-                                            <a className='btn btn-warning' href={`/edit/${posts._id}` }  >
+                                            <a className='btn btn-warning' href={`/order/edit/${posts._id}` }  >
                                                     <i className='fas fa-edit'></i>&nbsp;Edit
                                             </a>
                                             &nbsp;
@@ -84,7 +81,7 @@ export default class Home extends Component {
                     </tbody>
             </table>
 
-            <button className='btn btn-success'><a href='/add'  style={{textDecoration: "none" , color : "white"}}>Create New Post</a></button>
+            <button className='btn btn-success'><a href='/order/add'  style={{textDecoration: "none" , color : "white"}}>Create New Post</a></button>
 
       </div>
     )
