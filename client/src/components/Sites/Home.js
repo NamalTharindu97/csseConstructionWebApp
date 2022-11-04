@@ -60,10 +60,10 @@ export default class Home extends Component {
 
                                     <td>
                                     <a href={`/post/${posts._id}` }   style = {{textDecoration : 'none'}} >
-                                           {posts.name}
+                                           {posts.location}
                                     </a>
                                     </td>
-                                    <td>{posts.address}</td>
+                                    <td>{posts.name}</td>
                                     <td>{posts.contact}</td>
                                     <td>
 
