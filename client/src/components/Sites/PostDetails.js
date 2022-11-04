@@ -3,9 +3,9 @@ import axios from 'axios';
 import {  useParams } from 'react-router-dom';
 
 export default function PostDetails() {
-  
+  //for get item_id from the address
   const {id} = useParams();
-
+   //set updated item details for variables
   const [post, setPost] = useState({   
 
     location: "",
@@ -13,14 +13,15 @@ export default function PostDetails() {
     contact : ""
 
 });
+//create variables for set values
   const { location, name, contact } = post;
-
+ //react hook design pattern usage
   useEffect(()=>{
-    getEvents();
+    getItem();
 },[])
 
-
-  function getEvents() {
+//use axios get method with id for retreve relavent item
+  function getItem() {
           axios.get("http://localhost:8000/post/" + id ).then((res) => {
             if(res.data.success){
 
