@@ -3,7 +3,7 @@ import axios from 'axios';
 import './style.css'
 
 export default class Home extends Component {
-    //Render Props design patter usage
+ //Render Props design patter usage
     constructor(props){
         super(props);
         this.state = {

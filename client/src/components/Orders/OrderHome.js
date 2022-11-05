@@ -3,18 +3,18 @@ import axios from 'axios';
 import './style.css'
 
 export default class Home extends Component {
-
+    //Render Props design patter usage
     constructor(props){
         super(props);
         this.state = {
             posts : []
         };
     }
-
+    //use for get item data from the database
     componentDidMount(){
         this.retrievePost();
     }
-
+    //use for delete data from the
     retrievePost(){
         axios.get('/orders/').then(res => {
             if(res.data.success){

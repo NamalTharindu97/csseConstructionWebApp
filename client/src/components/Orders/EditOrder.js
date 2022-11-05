@@ -5,9 +5,8 @@ import vector2 from '../../asset/vector2.png'
 
 export default function EditOrder() {
 
-  const {id} = useParams();
-
-  const [post, setPost] = useState({   
+  const {id} = useParams();  //for get item_id from the address
+  const [post, setPost] = useState({       //set updated item details for variables
 
     site: "",
     item: "",
@@ -15,12 +14,12 @@ export default function EditOrder() {
 
 });
   const { site, item, supplier } = post;
-
+  //set updated item details for variables
   useEffect(()=>{
     getEvents();
 },[])
 
-
+//handlechange for set values
   function getEvents() {
           axios.get("http://localhost:8000/order/" + id ).then((res) => {
             if(res.data.success){
@@ -32,7 +31,7 @@ export default function EditOrder() {
           console.log(post)
   }
 
-
+//handlechange for set values
 const onInputChange = e => {
 
   setPost({...post, [e.target.name] : e.target.value});
@@ -41,7 +40,7 @@ const onInputChange = e => {
 
 
 const onSubmit = async e => {
-        
+  //use axios put methos with id for update relavent detail 
   e.preventDefault();
   await axios.put('http://localhost:8000/order/update/' + id , post).then(() => {
       alert("Order Details Successfully Updated");
