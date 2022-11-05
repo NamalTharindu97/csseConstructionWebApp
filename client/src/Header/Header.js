@@ -27,13 +27,13 @@ const Header = () => {
 
                            <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Requisition
+                            Add
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-                            <a class="dropdown-item" href="/add">Sites ADD</a>
-                            <a class="dropdown-item" href="/item/add">Items ADD</a>
-                            <a class="dropdown-item" href="/suplier/add">Supplier ADD</a>
-                            <a class="dropdown-item" href="/order/add">Order ADD</a>
+                            <a class="dropdown-item" href="/add">Sites </a>
+                            <a class="dropdown-item" href="/item/add">Items </a>
+                            <a class="dropdown-item" href="/suplier/add">Supplier </a>
+                            <a class="dropdown-item" href="/order/add">Order </a>
                             
                             </div>
                             </li>
