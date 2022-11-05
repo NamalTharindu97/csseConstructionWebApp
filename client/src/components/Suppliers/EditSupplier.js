@@ -44,7 +44,7 @@ const onSubmit = async e => {
         
   e.preventDefault();
   await axios.put('http://localhost:8000/supliers/update/' + id , post).then(() => {
-      alert("Sites Details Successfully Updated");
+      alert("Supplier Details Successfully Updated");
       window.location.reload(true)//reload page
   }).catch((err) => {
       alert(err);
@@ -74,6 +74,14 @@ const onSubmit = async e => {
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
                      name="address"
                      defaultValue={address}
+                    onChange={ e => onInputChange(e)}
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput2">Contact</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+                     name="contact"
+                     defaultValue={contact}
                     onChange={ e => onInputChange(e)}
                     />
                   </div>

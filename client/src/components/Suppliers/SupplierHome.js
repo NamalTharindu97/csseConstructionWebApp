@@ -45,9 +45,11 @@ export default class Home extends Component {
             {/* table head */}
                     <thead>
                             <tr>
+                                <th scope='col'>No</th>
                                 <th scope='col'>Name</th>
                                 <th scope='col'>Address</th>
                                 <th scope='col'>Contact</th>
+                                <th scope='col'>Action</th>
                             </tr>
                     </thead>
                 {/* table body */}
@@ -62,6 +64,7 @@ export default class Home extends Component {
                                     </a>
                                     </td>
                                     <td>{posts.address}</td>
+                                    <td>{posts.contact}</td>
                                     <td>
 
                                             <a className='btn btn-warning' href={`/supplier/edit/${posts._id}` }  >
@@ -79,7 +82,7 @@ export default class Home extends Component {
                     </tbody>
             </table>
 
-            <button className='btn btn-success'><a href='/suplier/add'  style={{textDecoration: "none" , color : "white"}}>Create New Post</a></button>
+            <button className='btn btn-success'><a href='/suplier/add'  style={{textDecoration: "none" , color : "white"}}>Create New Supplier</a></button>
 
       </div>
     )
