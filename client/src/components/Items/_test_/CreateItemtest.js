@@ -2,7 +2,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import CreateItem from "./CreateItem.js";
 
 test("Item Name input should be rendered", () => {
-  render(<CreateItem />);
+  render(<CreateItem />); //to get the page
   const itemNameInput = screen.getByPlaceholderText(/itemName/i);
   expect(itemNameInput).toBeInTheDocument();
 });
@@ -23,67 +23,36 @@ test("button should be rendered", () => {
 test('calls onClick prop when clicked', () => {
   render(<CreateItem />); 
 const onSubmit = jest.fn()
-const addBtn = screen.getByText(/Add/i)
+const addBtn = screen.getByText(/Add/i)  // to get add btn
   fireEvent.click(addBtn)
-  expect(onSubmit).toHaveBeenCalledTimes(1)
+  expect(onSubmit).toHaveBeenCalledTimes(1)  //for test onsubmit call one time
 })
 
+test('It should not allow letters to be inputted for Unit Price', () => {
+  render(<CreateItem />); 
+  const UnitPriceInput = screen.getByLabelText('unitPrice')
+  expect(UnitPriceInput.value).toBe('') // empty before
+  fireEvent.change(input, {target: {value: 'No letters'}})
+  expect(UnitPriceInput.value).toBe('') //empty after
+})
 
-
-
-
-
-
-
-
-
-
-
-
-test("username input should be empty", () => {
-  render(<Login />);
-  const usernameInputEl = screen.getByPlaceholderText(/username/i);
-  expect(usernameInputEl.value).toBe("");
-});
-
-test("password input should be empty", () => {
-  render(<Login />);
-  const passwordInputEl = screen.getByPlaceholderText(/password/i);
-  expect(passwordInputEl.value).toBe("");
-});
-
-test("button should be disabled", () => {
-  render(<Login />);
-  const buttonEl = screen.getByRole("button");
-  expect(buttonEl).toBeDisabled();
-});
-
-test("loading should not be rendered", () => {
-  render(<Login />);
-  const buttonEl = screen.getByRole("button");
-  expect(buttonEl).not.toHaveTextContent(/please wait/i);
-});
-
-test("error message should not be visible", () => {
-  render(<Login />);
-  const errorEl = screen.getByTestId("error");
-  expect(errorEl).not.toBeVisible();
-});
-
-test("username input should change", () => {
-  render(<Login />);
-  const usernameInputEl = screen.getByPlaceholderText(/username/i);
+test("Item Name input should change", () => {
+  render(<CreateItem />);
+  const itemNameInput = screen.getByPlaceholderText(/itemName/i);
   const testValue = "test";
-
-  fireEvent.change(usernameInputEl, { target: { value: testValue } });
-  expect(usernameInputEl.value).toBe(testValue);
-});
-
-test("password input should change", () => {
-  render(<Login />);
-  const passwordInputEl = screen.getByPlaceholderText(/password/i);
-  const testValue = "test";
-
-  fireEvent.change(passwordInputEl, { target: { value: testValue } });
+  fireEvent.change(itemNameInput, { target: { value: testValue } });
   expect(passwordInputEl.value).toBe(testValue);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+

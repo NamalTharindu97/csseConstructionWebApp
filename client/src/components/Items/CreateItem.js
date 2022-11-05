@@ -50,7 +50,7 @@ const onSubmit = async e => {
 
                   <div class="form-group">
                     <label for="formGroupExampleInput2">unitPrice</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="unitPrice"
+                    <input type="Number" class="form-control" id="formGroupExampleInput2" placeholder="unitPrice"
                      name="unitPrice"
                     onChange={ e => onInputChange(e)}
                     />
