@@ -4,21 +4,22 @@ import {  useParams } from 'react-router-dom';
 
 export default function PostDetails() {
   
-  const {id} = useParams();
-
+  const {id} = useParams();   //for get item_id from the address
+     //set updated item details for variables
   const [post, setPost] = useState({   
 
     itemName: "",
     unitPrice: ""
 
 });
+//create variables for set values
   const { itemName, unitPrice} = post;
-
+ //react hook design pattern usage
   useEffect(()=>{
     getEvents();
 },[])
 
-
+//use axios get method with id for retreve relavent item
   function getEvents() {
           axios.get("http://localhost:8000/item/" + id ).then((res) => {
             if(res.data.success){

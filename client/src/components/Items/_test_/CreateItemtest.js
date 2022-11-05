@@ -41,7 +41,7 @@ test("Item Name input should change", () => {
   const itemNameInput = screen.getByPlaceholderText(/itemName/i);
   const testValue = "test";
   fireEvent.change(itemNameInput, { target: { value: testValue } });
-  expect(passwordInputEl.value).toBe(testValue);
+  expect(itemNameInputl.value).toBe(testValue);
 });
 
 

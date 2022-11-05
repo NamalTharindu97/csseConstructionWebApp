@@ -5,6 +5,8 @@ import vector01 from '../../asset/vector01.png'
 
 export default function CreatePost() {
 
+//useage of react hooks design pattern
+ //this useState use for set item detail
   const [post, setPost] = useState({ 
 
     itemName: "",
@@ -12,7 +14,7 @@ export default function CreatePost() {
 
 });
 
-
+//handle change for set values for  variables
 const onInputChange = e => {
 
   setPost({...post, [e.target.name] : e.target.value});
@@ -22,7 +24,7 @@ const onInputChange = e => {
 
 
 const onSubmit = async e => {
-        
+     //save details for database using axios post method     
   e.preventDefault();
   await axios.post('/item/save' , post).then(() => {
       alert("Item Details Successfully Added");
@@ -32,7 +34,6 @@ const onSubmit = async e => {
    
 }
 
-  
   return (
     <>
     <div>
@@ -44,7 +45,7 @@ const onSubmit = async e => {
                     <label for="formGroupExampleInput">itemName</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="itemName"
                     name="itemName"
-                    onChange={ e => onInputChange(e)}
+                    onChange={ e => onInputChange(e)}   //Controlled Components design pattern usage
                     />
                   </div>
 
@@ -52,7 +53,7 @@ const onSubmit = async e => {
                     <label for="formGroupExampleInput2">unitPrice</label>
                     <input type="Number" class="form-control" id="formGroupExampleInput2" placeholder="unitPrice"
                      name="unitPrice"
-                    onChange={ e => onInputChange(e)}
+                    onChange={ e => onInputChange(e)}     //Controlled Components design pattern usage
                     />
                   </div>
   <div>

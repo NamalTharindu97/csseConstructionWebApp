@@ -3,7 +3,7 @@ import axios from 'axios';
 import './style.css'
 
 export default class Home extends Component {
-
+    //Render Props design patter usage
     constructor(props){
         super(props);
         this.state = {
@@ -14,7 +14,7 @@ export default class Home extends Component {
     componentDidMount(){
         this.retrievePost();
     }
-
+    //use for get item data from the database
     retrievePost(){
         axios.get('/items/').then(res => {
             if(res.data.success){
@@ -24,7 +24,7 @@ export default class Home extends Component {
             }
         })
     }
-
+    //use for delete data from the
    onDelete = (id) => {
         axios.delete("/item/delete/"+ id)
             .then((res) => {

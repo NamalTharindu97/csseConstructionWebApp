@@ -5,21 +5,22 @@ import vector2 from '../../asset/vector2.png'
 
 export default function EditPost() {
 
-  const {id} = useParams();
-
+  const {id} = useParams(); //for get item_id from the address
+  //set updated item details for variables
   const [post, setPost] = useState({   
 
     itemName: "",
     unitPrice: ""
 
 });
+  //set updated item details for variables
   const { itemName, unitPrice } = post;
 
   useEffect(()=>{
     getEvents();
 },[])
 
-
+//handlechange for set values
   function getEvents() {
           axios.get("http://localhost:8000/item/" + id ).then((res) => {
             if(res.data.success){
@@ -31,7 +32,7 @@ export default function EditPost() {
           console.log(post)
   }
 
-
+//handlechange for set values
 const onInputChange = e => {
 
   setPost({...post, [e.target.name] : e.target.value});
@@ -40,7 +41,7 @@ const onInputChange = e => {
 
 
 const onSubmit = async e => {
-        
+//use axios put methos with id for update relavent detail   
   e.preventDefault();
   await axios.put('http://localhost:8000/item/update/' + id , post).then(() => {
       alert("Sites Details Successfully Updated");
