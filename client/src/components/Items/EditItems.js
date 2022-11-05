@@ -43,7 +43,7 @@ const onSubmit = async e => {
         
   e.preventDefault();
   await axios.put('http://localhost:8000/item/update/' + id , post).then(() => {
-      alert("Sites Details Successfully Updated");
+      alert("Item Details Successfully Updated");
       window.location.reload(true)//reload page
   }).catch((err) => {
       alert(err);
