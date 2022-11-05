@@ -42,7 +42,7 @@ const onSubmit = async e => {
     <h2>Item ADD</h2>
                   <div class="form-group">
                     <label for="formGroupExampleInput">itemName</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="itemName"
                     name="itemName"
                     onChange={ e => onInputChange(e)}
                     />
@@ -50,7 +50,7 @@ const onSubmit = async e => {
 
                   <div class="form-group">
                     <label for="formGroupExampleInput2">unitPrice</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="unitPrice"
                      name="unitPrice"
                     onChange={ e => onInputChange(e)}
                     />
