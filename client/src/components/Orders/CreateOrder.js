@@ -4,7 +4,8 @@ import './style.css'
 import vector01 from '../../asset/vector01.png' 
 
 export default function CreatePost() {
-
+//useage of react hooks design pattern
+ //this useState use for set item detail
   const [post, setPost] = useState({ 
 
     site: "",
@@ -13,7 +14,7 @@ export default function CreatePost() {
 
 });
 
-
+//handle change for set values for  variables
 const onInputChange = e => {
 
   setPost({...post, [e.target.name] : e.target.value});
@@ -23,7 +24,7 @@ const onInputChange = e => {
 
 
 const onSubmit = async e => {
-        
+ //save details for database using axios post method   
   e.preventDefault();
   await axios.post('/order/save' , post).then(() => {
       alert("order Details Successfully Added");
@@ -43,9 +44,9 @@ const onSubmit = async e => {
     <h2>Order ADD</h2>
                   <div class="form-group">
                     <label for="formGroupExampleInput">Site</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"  
                     name="site"
-                    onChange={ e => onInputChange(e)}
+                    onChange={ e => onInputChange(e)}  //Controlled Components design pattern usage
                     />
                   </div>
 
@@ -53,14 +54,14 @@ const onSubmit = async e => {
                     <label for="formGroupExampleInput2">Item</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
                      name="item"
-                    onChange={ e => onInputChange(e)}
+                    onChange={ e => onInputChange(e)} //Controlled Components design pattern usage
                     />
                   </div>
                   <div class="form-group">
                     <label for="formGroupExampleInput2">supplier</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
                      name="supplier"
-                    onChange={ e => onInputChange(e)}
+                    onChange={ e => onInputChange(e)} //Controlled Components design pattern usage
                     />
                   </div>
   <div>
