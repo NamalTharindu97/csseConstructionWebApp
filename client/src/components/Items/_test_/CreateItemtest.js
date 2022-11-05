@@ -36,6 +36,7 @@ test('It should not allow letters to be inputted for Unit Price', () => {
   expect(UnitPriceInput.value).toBe('') //empty after
 })
 
+
 test("Item Name input should change", () => {
   render(<CreateItem />);
   const itemNameInput = screen.getByPlaceholderText(/itemName/i);
@@ -43,15 +44,6 @@ test("Item Name input should change", () => {
   fireEvent.change(itemNameInput, { target: { value: testValue } });
   expect(itemNameInputl.value).toBe(testValue);
 });
-
-
-
-
-
-
-
-
-
 
 
 

@@ -44,7 +44,9 @@ const onSubmit = async e => {
     <h2>Order ADD</h2>
                   <div class="form-group">
                     <label for="formGroupExampleInput">Site</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"  
+
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="site"
+
                     name="site"
                     onChange={ e => onInputChange(e)}  //Controlled Components design pattern usage
                     />
@@ -52,14 +54,14 @@ const onSubmit = async e => {
 
                   <div class="form-group">
                     <label for="formGroupExampleInput2">Item</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="item"
                      name="item"
                     onChange={ e => onInputChange(e)} //Controlled Components design pattern usage
                     />
                   </div>
                   <div class="form-group">
                     <label for="formGroupExampleInput2">supplier</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="supplier"
                      name="supplier"
                     onChange={ e => onInputChange(e)} //Controlled Components design pattern usage
                     />
